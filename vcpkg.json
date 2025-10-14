@@ -1,7 +1,6 @@
 {
   "dependencies": [
     "cpp-httplib",
-    "nlohmann-json",
-    "nanogui"
+    "nlohmann-json"
   ]
 }

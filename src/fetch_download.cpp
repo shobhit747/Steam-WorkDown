@@ -5,6 +5,7 @@
 #include <filesystem>
 #define RED "\033[31m" 
 #define RESET "\033[0m"
+#define GREEN "\033[32m"
 
 namespace fs = std::filesystem;
 
@@ -114,8 +115,8 @@ void fetch_download::download(){
 
     fs::path item_current_download_path = fs::absolute("steamapps/workshop/content/"+consumer_app_id+"/"+workshop_item_id);
     if(fs::exists(item_current_download_path)){
-        std::cout << "Workshop Item : "+ title +"(" + workshop_item_id + ") ";
-        std::cout << "successfully downloaded." << std::endl; 
+        std::cout << GREEN << "Workshop Item : "+ title +"(" + workshop_item_id + ") ";
+        std::cout << "successfully downloaded." << RESET << std::endl; 
         
         //move to user defined path
         if(!user_define_download_path.empty()){
