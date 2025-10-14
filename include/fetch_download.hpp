@@ -1,7 +1,6 @@
 #pragma once
 #include <nlohmann/json_fwd.hpp>
 
-
 class fetch_download{
     private:
     std::string workshop_item_id;
@@ -22,7 +21,7 @@ class fetch_download{
     );
 
     void display_data();
-    
+
     public:
     fetch_download(std::string item_id);
     ~fetch_download();

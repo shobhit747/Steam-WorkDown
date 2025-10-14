@@ -59,7 +59,7 @@
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
                 <property name="tooltip-text" translatable="yes">Fetch workshop item details to download</property>
-                <signal name="clicked" handler="on_button_fetch_clicked" swapped="no"/>
+                <signal name="clicked" handler="on_button_fetch_clicked" object="entry_workshop_id" swapped="no"/>
               </object>
               <packing>
                 <property name="x">455</property>

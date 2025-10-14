@@ -12,6 +12,8 @@ namespace fs = std::filesystem;
 fetch_download::fetch_download(std::string item_id)
     : workshop_item_id(item_id) {}
 
+
+
 void fetch_download::set_fetched_data(
     std::string title, std::string description, std::string file_size,
     std::string consumer_app_id, std::string preview_url
@@ -79,6 +81,8 @@ void fetch_download::fetch(){
             consumer_app_id,
             workshop_item_data["preview_url"]
         );
+        display_data();
+
 
     }else{
         std::cout << RED << httplib::to_string(response.error() ) << std::endl;
@@ -97,7 +101,6 @@ void fetch_download::download(){
         + "+login anonymous +workshop_download_item "
         + consumer_app_id + " " + workshop_item_id + " +quit";
     
-    display_data();
     std::cout << "Downloading.. " << title << "(" << workshop_item_id << ")\n"; 
 
     FILE* pipe = popen(steamcmd_download_command.c_str(), "r");
@@ -136,3 +139,5 @@ void fetch_download::download(){
 }
 
 fetch_download::~fetch_download(){}
+
+
